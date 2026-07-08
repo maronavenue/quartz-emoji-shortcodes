@@ -1,28 +1,14 @@
-export { ExampleTransformer } from "./transformer";
-export { ExampleFilter } from "./filter";
-export { ExampleEmitter } from "./emitter";
-export { default as ExampleComponent } from "./components/ExampleComponent";
-
-export type {
-  ExampleTransformerOptions,
-  ExampleFilterOptions,
-  ExampleEmitterOptions,
-} from "./types";
-
-export type { ExampleComponentOptions } from "./components/ExampleComponent";
-
-// Re-export shared types from @quartz-community/types
-export type {
-  QuartzComponent,
-  QuartzComponentProps,
-  QuartzComponentConstructor,
-  StringResource,
-  QuartzTransformerPlugin,
-  QuartzFilterPlugin,
-  QuartzEmitterPlugin,
-  QuartzPageTypePlugin,
-  QuartzPageTypePluginInstance,
-  PageMatcher,
-  PageGenerator,
-  VirtualPage,
-} from "@quartz-community/types";
+export { EmojiShortcodes } from "./transformer";
+export type { QuartzTransformerPlugin } from "@quartz-community/types";
+4. In package.json, remove the now-dangling "./types" and "./components" entries from "exports", and replace the "quartz" block with:
+"quartz": {
+  "name": "emoji-shortcodes",
+  "displayName": "Emoji Shortcodes",
+  "category": "transformer",
+  "version": "1.0.0",
+  "quartzVersion": ">=5.0.0",
+  "dependencies": [],
+  "defaultOrder": 50,
+  "defaultEnabled": true,
+  "defaultOptions": {}
+}
